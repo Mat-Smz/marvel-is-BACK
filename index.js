@@ -67,7 +67,12 @@ app.get("/comics", async (req, res) => {
 });
 
 app.all("*", (req, res) => {
-  res.status(404).json({ message: "Le back de l'API Marvel du Reacteur :) " });
+  res
+    .status(404)
+    .json({
+      message:
+        "Le back de l'API Marvel du Reacteur :) Pour le Front, rendez-vous sur greatmarvel.netlify.com"
+    });
 });
 
 app.listen(process.env.PORT, () => {
